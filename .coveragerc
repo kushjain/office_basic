@@ -1,0 +1,10 @@
+[run]
+branch = True
+source =
+    apps
+    libs
+omit =
+    */tests/*
+    */migrations/*
+    */tests.py
+    */__init__.py

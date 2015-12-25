@@ -128,9 +128,6 @@ class Settings(LoggerSettingsMixin, Configuration):
     # ######### MIDDLEWARE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
     MIDDLEWARE_CLASSES = [
-        # CorsMiddleware must be before Default Django CommonMiddleware
-        'corsheaders.middleware.CorsMiddleware',
-
         # Default Django middleware.
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',

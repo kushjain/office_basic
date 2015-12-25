@@ -1,1 +1,3 @@
--r dev.txt
+-r common.txt
+
+git-pylint-commit-hook==2.0.9

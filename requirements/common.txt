@@ -2,6 +2,6 @@ Django==1.9
 psycopg2==2.6.1
 
 # Django configuration http://django-configurations.readthedocs.org/en/latest/
-# Pointing this to a commit as pip is not updated to be compatible with django 1.8
+# Pointing this to a commit as pip is not updated to be compatible with django 1.9
 git+https://github.com/jezdez/django-configurations.git@5ece1070448d3e026b81422691c60207f5699c0c
 

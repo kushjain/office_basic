@@ -9,7 +9,7 @@ class Settings(dev.Settings):
     DATABASES = {
         'default': {
             # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
             'NAME': 'element',        # Or path to database file if using sqlite3.
             'USER': 'admin',                      # Not used with sqlite3.
             'PASSWORD': 'kush@201599',                  # Not used with sqlite3.

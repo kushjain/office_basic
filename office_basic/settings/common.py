@@ -164,9 +164,13 @@ class Settings(LoggerSettingsMixin, Configuration):
     ]
 
     LOCAL_APPS = [
+        'elements.base',
+        'elements.commute',
     ]
 
     # ######### END APP CONFIGURATION
+
+    AUTH_USER_MODEL = 'base.User'
 
     # ######### EMAIL CONFIGURATION
 

@@ -11,7 +11,7 @@ class Settings(common.Settings):
     # DATABASE CONFIGURATION
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
             'NAME': os.environ['RDS_DB_NAME'],
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],

@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class CommuteConfig(AppConfig):
-    name = 'elements.commute'
+    name = 'office_basic.elements.commute'

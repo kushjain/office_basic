@@ -19,7 +19,7 @@ class Settings(dev.Settings):
 
     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-    FIXTURE_DIRS = dev.Settings.FIXTURE_DIRS + (os.path.join(dev.Settings.DJANGO_ROOT, 'libs/test-fixtures/'),)
+    FIXTURE_DIRS = dev.Settings.FIXTURE_DIRS + [os.path.join(dev.Settings.DJANGO_ROOT, 'libs/test-fixtures/')]
 
     CELERY_ALWAYS_EAGER = True  # Only to be used for testing purposes
     COMPRESS_ENABLED = False

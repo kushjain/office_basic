@@ -44,6 +44,10 @@ class Vehicle(models.Model):
     type = models.PositiveSmallIntegerField(choices=TYPES, help_text=_("Own Private Vehicle Type used for commuting"),
                                             default=CAR)
 
+    def __str__(self):
+        return "{owner} - {type} - {license}".format(owner=self.owner.username, type=self.type,
+                                                     license=self.license_number)
+
 
 class Route(TimeStampedModel):
     """
@@ -71,6 +75,10 @@ class Route(TimeStampedModel):
 
         super(Route, self).save(force_insert, force_update, using, update_fields)
 
+    def __str__(self):
+        return "{user} : {start} to {end}".format(user=self.user.username, start=self.start_location.name,
+                                                  end=self.end_location.name)
+
 
 class RouteLog(TimeStampedModel):
     """
@@ -91,6 +99,9 @@ class RouteLog(TimeStampedModel):
             self.host = self.route.user
 
         super(RouteLog, self).save(force_insert, force_update, using, update_fields)
+
+    def __str__(self):
+        return "{route} : Dated {date}".format(route=self.route, date=self.date)
 
 
 class PickUpEvent(Event):

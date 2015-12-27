@@ -72,9 +72,8 @@ class Event(TimeStampedModel):
     """
 
     name = models.CharField(max_length=50, help_text=_("Name of Event"))
-    date = models.DateField(help_text=_("Date of Event"))
-    start_time = models.TimeField(help_text=_("Start Time of Event"))
-    end_time = models.TimeField(help_text=_("End Time of event"), null=True, blank=True)
+    start_time = models.DateTimeField(help_text=_("Start Time of Event"))
+    end_time = models.DateTimeField(help_text=_("End Time of event"), null=True, blank=True)
     duration = models.DurationField(help_text=_("Duration of Event"), null=True, blank=True)
     host = models.ForeignKey(User, help_text=_("Event Host"), related_name="hosted_events",
                              on_delete=models.CASCADE)
@@ -83,7 +82,7 @@ class Event(TimeStampedModel):
     # todo : decide on-delete behaviour for venue
 
     def __str__(self):
-        return "{name} - {date} - {venue}".format(name=self.name, date=self.date, venue=self.venue)
+        return "{name} - {host} - {venue}".format(name=self.name, host=self.host.username, venue=self.venue.name)
 
     def clean(self):
         """
